@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxeFurniture - Contact</title>
+    <link rel="stylesheet" href="css-assets/contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+       
+    </style>
+</head>
+<body>
+    <header>
+        <div class="center-align">
+            <img src="images/Logo.jpg" class="logo" alt="LuxeFurniture Logo">
+            <nav id="topLinks" class="center-align">
+                <a href="index.html" style="--i:1;">Home</a>
+                <a href="info.html" style="--i:2;">Info</a>
+                <a href="membership.html" style="--i:3;">Membership</a>
+                <a href="gallery.html" style="--i:4;">Gallery</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>Contact Form</h1>
+        <form>
+            <label for="Name" style="--i:1;">Name</label>
+            <input type="text" id="Name" name="Name" required style="--i:1;">
+
+            <label for="Email" style="--i:2;">Email</label>
+            <input type="email" id="Email" name="Email" required style="--i:2;">
+
+            <label for="Message" style="--i:3;">Message</label>
+            <textarea id="Message" name="Message" required style="--i:3;"></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>
+            <script>
+                var theDate = new Date();
+                document.write("&copy; " + theDate.getFullYear());
+                document.write(" - Mog Hub | Last modified: ");
+                var theModifiedDate = new Date(document.lastModified);
+                document.write(theModifiedDate.toDateString());
+            </script>
+            <br>Powered by "LuxeFurniture" Web Hosting
+        </p>
+    </footer>
+</body>
+</html>

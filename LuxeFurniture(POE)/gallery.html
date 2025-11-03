@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LuxeFurniture - Gallery</title>
+  <link rel="stylesheet" href="css-assets/gallery.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+  </style>
+<meta name="description" content="LuxeFurniture Gallery, the page where you can browse throught the items and see the price ranges and what they items look like">
+</head>
+<body>
+  <header>
+    <img src="images/Logo.jpg" class="logo" alt="LuxeFurniture Logo">
+    <nav>
+      <a href="index.html" style="--i:1;">Home</a>
+      <a href="membership.html" style="--i:2;">Membership</a>
+      <a href="contact.html" style="--i:3;">Contact</a>
+      <a href="info.html" style="--i:4;">Info</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Gallery</h1>
+
+    <section>
+      <h2>Couches</h2>
+      <div class="gallery-row">
+        <div class="item">
+          <a target="_blank" href="images/O.jpg">
+            <img src="images/O.jpg" alt="White Couch">
+          </a>
+          <div class="desc">White Modern Couch</div>
+          <div class="price">R12,000</div>
+        </div>
+
+        <div class="item">
+          <a target="_blank" href="images/modern.jpg">
+            <img src="images/modern.jpg" alt="Grey Couch">
+          </a>
+          <div class="desc">Grey Leather Couch</div>
+          <div class="price">R9,500</div>
+        </div>
+
+        <div class="item">
+          <a target="_blank" href="images/sofa.jpg">
+            <img src="images/sofa.jpg" alt="Round Couch">
+          </a>
+          <div class="desc">Round Fabric Couch</div>
+          <div class="price">R11,000</div>
+        </div>
+
+        <div class="item">
+          <a target="_blank" href="images/chair1.jpg">
+            <img src="images/chair1.jpg" alt="White Couch">
+          </a>
+          <div class="desc">Single White Chair</div>
+          <div class="price">R4,500</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Mirrors</h2>
+      <div class="gallery-row">
+        <div class="item">
+          <a target="_blank" href="images/mirror.jpg">
+            <img src="images/mirror.jpg" alt="Mirror">
+          </a>
+          <div class="desc">Elegant Wall Mirror</div>
+          <div class="price">R3,000</div>
+        </div>
+
+        <div class="item">
+          <a target="_blank" href="images/toilet.jpg">
+            <img src="images/toilet.jpg" alt="Toilet">
+          </a>
+          <div class="desc">Bathroom Mirror Set</div>
+          <div class="price">R2,500</div>
+        </div>
+
+        <div class="item">
+          <a target="_blank" href="images/frameless.jpg">
+            <img src="images/frameless.jpg" alt="Frameless Mirror">
+          </a>
+          <div class="desc">Frameless Mirror</div>
+          <div class="price">R2,800</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Chairs</h2>
+      <div class="gallery-row">
+        <div class="item">
+          <a target="_blank" href="images/chair.jpg">
+            <img src="images/chair.jpg" alt="Chair">
+          </a>
+          <div class="desc">Classic Wooden Chair</div>
+          <div class="price">R3,500</div>
+        </div>
+
+        <div class="item">
+          <a target="_blank" href="images/Bontempi.jpg">
+            <img src="images/Bontempi.jpg" alt="Bontempi Chair">
+          </a>
+          <div class="desc">Bontempi Chair</div>
+          <div class="price">R4,200</div>
+        </div>
+
+        <div class="item">
+          <a target="_blank" href="images/table.jpeg">
+            <img src="images/table.jpeg" alt="Table">
+          </a>
+          <div class="desc">Dining Table Chair Set</div>
+          <div class="price">R8,000</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Bedroom Sets</h2>
+      <div class="gallery-row">
+        <div class="item">
+          <a target="_blank" href="images/bed.jpg">
+            <img src="images/bed.jpg" alt="Bed">
+          </a>
+          <div class="desc">King Size Bed Set</div>
+          <div class="price">R15,000</div>
+        </div>
+
+        <div class="item">
+          <a target="_blank" href="images/R.jpg">
+            <img src="images/R.jpg" alt="Bedroom Set">
+          </a>
+          <div class="desc">Luxury Bedroom Set</div>
+          <div class="price">R18,000</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      <script>
+        var theDate = new Date();
+        document.write("&copy; " + theDate.getFullYear());
+        document.write(" - Mog Hub | Last modified: ");
+        var theModifiedDate = new Date(document.lastModified);
+        document.write(theModifiedDate.toDateString());
+      </script>
+      <br>Powered by "LuxeFurniture" Web Hosting
+    </p>
+  </footer>
+
+  <script>
+    function reveal() {
+      // Reveal h2
+      const headings = document.querySelectorAll('h2');
+      headings.forEach(h => {
+        const top = h.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (top < windowHeight - 100) {
+          h.classList.add('visible');
+        }
+      });
+
+     const items = document.querySelectorAll('.gallery-row .item');
+items.forEach((item, index) => {  
+  const top = item.getBoundingClientRect().top;
+  const windowHeight = window.innerHeight;
+  if (top < windowHeight - 100) {
+    setTimeout(() => item.classList.add('visible'), index * 100);
+  }
+});
+    }
+
+    window.addEventListener('scroll', reveal);
+    window.addEventListener('load', reveal);
+  </script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxeFurniture - Contact</title>
+    <link rel="stylesheet" href="css-assets/info.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+    </style>
+</head>
+<body>
+    <header>
+        <div class="center-align">
+            <img src="images/Logo.jpg" class="logo" alt="LuxeFurniture Logo">
+            <nav id="topLinks" class="center-align">
+                <a href="index.html" style="--i:1;">Home</a>
+                <a href="membership.html" style="--i:2;">Membership</a>
+                <a href="contact.html" style="--i:3;">Contact</a>
+                <a href="gallery.html" style="--i:4;">Gallery</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>Contact Us</h1>
+
+        <div class="contact-info">
+            <ul>
+                <li><a href="tel:+27731615188">073 161 5188</a></li>
+                <li><a href="https://www.placedirect.co.za/">info@LuxeFurniture</a></li>
+                <li><a href="mailto:st10482011@vcconnect.edu.za" target="_blank">Email Us</a></li>
+            </ul>
+        </div>
+
+        <h3>Our Trading Hours</h3>
+        <table>
+            <tr>
+                <th>Day</th>
+                <th>Time</th>
+            </tr>
+            <tr>
+                <td>Monday</td>
+                <td>9am - 6pm</td>
+            </tr>
+            <tr>
+                <td>Tuesday</td>
+                <td>9am - 6pm</td>
+            </tr>
+            <tr>
+                <td>Wednesday</td>
+                <td>9am - 6pm</td>
+            </tr>
+            <tr>
+                <td>Thursday</td>
+                <td>9am - 6pm</td>
+            </tr>
+            <tr>
+                <td>Friday</td>
+                <td>9am - 6pm</td>
+            </tr>
+            <tr>
+                <td>Saturday</td>
+                <td>9am - 1pm</td>
+            </tr>
+            <tr>
+                <td>Sunday</td>
+                <td>Closed</td>
+            </tr>
+        </table>
+
+        <h4>Our Address</h4>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d57358.13335119338!2d28.007807!3d-26.037373!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9572c6626cd257%3A0x1d6e6d56245e2c64!2sPlace%20Direct!5e0!3m2!1sen!2sus!4v1757590909740!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <div class="enquiry-form">
+            <h2>Enquiry Form</h2>
+            <form id="enquiryForm">
+                <label for="name" style="--i:1;">Full Name</label>
+                <input type="text" id="name" name="name" required style="--i:1;">
+
+                <label for="email" style="--i:2;">Email</label>
+                <input type="email" id="email" name="email" required style="--i:2;">
+
+                <label for="phone" style="--i:3;">Phone</label>
+                <input type="tel" id="phone" name="phone" required style="--i:3;">
+
+                <label for="enquiryType" style="--i:4;">Enquiry Type</label>
+                <select id="enquiryType" name="enquiryType" required style="--i:4;">
+                    <option value="">Select...</option>
+                    <option value="product">Product Inquiry</option>
+                    <option value="service">Service Inquiry</option>
+                    <option value="volunteer">Become a Volunteer</option>
+                    <option value="sponsor">Sponsorship Opportunities</option>
+                </select>
+
+                <label for="message" style="--i:5;">Message</label>
+                <textarea id="message" name="message" required style="--i:5;"></textarea>
+
+                <button type="submit">Submit Enquiry</button>
+            </form>
+            <div id="response"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>
+            <script>
+                var theDate = new Date();
+                document.write("&copy; " + theDate.getFullYear());
+                document.write(" - Mog Hub | Last modified: ");
+                var theModifiedDate = new Date(document.lastModified);
+                document.write(theModifiedDate.toDateString());
+            </script>
+            <br>Powered by "LuxeFurniture" Web Hosting
+        </p>
+    </footer>
+
+    <script>
+        document.getElementById('enquiryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic validation
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const type = document.getElementById('enquiryType').value;
+            const message = document.getElementById('message').value.trim();
+
+            if (!name || !email || !phone || !type || !message) {
+                showResponse('Please fill in all fields.', 'error');
+                return;
+            }
+
+            // Simulated processing based on enquiry type
+            let responseText = '';
+            if (type === 'product') {
+                responseText = `Thank you, ${name}! Your product inquiry has been received. Most items are in stock with prices starting from R2,500. A consultant will contact you within 24 hours with availability and custom options.`;
+            } else if (type === 'service') {
+                responseText = `Dear ${name}, thank you for your interest in our services. Virtual consultations are available at R750/hour, and in-showroom styling starts at R2,000. We'll email you a personalized proposal shortly.`;
+            } else if (type === 'volunteer') {
+                responseText = `Wonderful, ${name}! We're always looking for passionate volunteers for showroom events and photoshoots. No prior experience needed — just enthusiasm for luxury design. We'll send you our volunteer handbook and upcoming opportunities.`;
+            } else if (type === 'sponsor') {
+                responseText = `Excellent choice, ${name}! Sponsorship packages start at R10,000 and include brand placement in our showroom, social features, and VIP event access. A sponsorship manager will call you within 48 hours to discuss tiers.`;
+            }
+
+            showResponse(responseText, 'success');
+            
+            // Reset form
+            this.reset();
+        });
+
+        function showResponse(text, type) {
+            const responseDiv = document.getElementById('response');
+            responseDiv.textContent = text;
+            responseDiv.style.display = 'block';
+            responseDiv.style.background = type === 'error' ? 'rgba(255, 0, 0, 0.1)' : 'rgba(7, 71, 63, 0.1)';
+            responseDiv.style.borderLeft = `5px solid ${type === 'error' ? 'red' : 'var(--primary)'}`;
+        }
+
+        // Trigger animations on load
+        window.addEventListener('load', function() {
+            document.querySelectorAll('.enquiry-form label, .enquiry-form input, .enquiry-form select, .enquiry-form textarea').forEach(el => {
+                el.style.opacity = 1;
+                el.style.transform = 'translateX(0)';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LuxeFurniture - Membership</title>
+  <link rel="stylesheet" href="css-assets/membership.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+   
+  </style>
+</head>
+<body>
+  <header>
+    <img src="images/Logo.jpg" class="logo" alt="LuxeFurniture Logo">
+    <nav>
+      <a href="index.html" style="--i:1;">Home</a>
+      <a href="membership.html" style="--i:2;">Membership</a>
+      <a href="contact.html" style="--i:3;">Contact</a>
+      <a href="info.html" style="--i:4;">Info</a>
+      <a href="gallery.html" style="--i:5;">Gallery</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Membership</h1>
+    <p class="intro">Join the LuxeFurniture exclusive membership program and unlock a world of premium benefits. Enjoy personalized shopping experiences, early access to new arrivals, and invitations to private events. Choose the tier that suits your lifestyle and elevate your home with unparalleled elegance.</p>
+
+    <div class="tiers">
+      <div class="tier-card" style="--i:1;">
+        <h3>Silver</h3>
+        <div class="price">R500/year</div>
+        <div class="desc">Perfect for occasional shoppers seeking added perks.</div>
+        <ul>
+          <li>10% off all purchases</li>
+          <li>Free standard delivery</li>
+          <li>Early access to sales</li>
+          <li>Monthly newsletter with design tips</li>
+        </ul>
+        <button onclick="selectTier('Silver')">Select Silver</button>
+      </div>
+
+      <div class="tier-card" style="--i:2;">
+        <h3>Gold</h3>
+        <div class="price">R1,200/year</div>
+        <div class="desc">Ideal for frequent buyers who love exclusivity.</div>
+        <ul>
+          <li>15% off all purchases</li>
+          <li>Free express delivery</li>
+          <li>Priority customer support</li>
+          <li>Exclusive previews of new collections</li>
+          <li>Birthday gift voucher</li>
+        </ul>
+        <button onclick="selectTier('Gold')">Select Gold</button>
+      </div>
+
+      <div class="tier-card" style="--i:3;">
+        <h3>Platinum</h3>
+        <div class="price">R2,500/year</div>
+        <div class="desc">For the ultimate luxury enthusiast.</div>
+        <ul>
+          <li>20% off all purchases</li>
+          <li>Free worldwide delivery</li>
+          <li>Personal design consultant</li>
+          <li>Invites to VIP events</li>
+          <li>Annual luxury gift box</li>
+          <li>Lifetime warranty extension</li>
+        </ul>
+        <button onclick="selectTier('Platinum')">Select Platinum</button>
+      </div>
+    </div>
+
+    <div class="signup-form">
+      <h2>Sign Up Now</h2>
+      <form id="membershipForm">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" name="fullName" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="tier">Selected Tier</label>
+        <select id="tier" name="tier" required>
+          <option value="">Choose a tier...</option>
+          <option value="Silver">Silver - R500/year</option>
+          <option value="Gold">Gold - R1,200/year</option>
+          <option value="Platinum">Platinum - R2,500/year</option>
+        </select>
+
+        <button type="submit">Join Membership</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>
+      <script>
+        var theDate = new Date();
+        document.write("&copy; " + theDate.getFullYear());
+        document.write(" - Mog Hub | Last modified: ");
+        var theModifiedDate = new Date(document.lastModified);
+        document.write(theModifiedDate.toDateString());
+      </script>
+      <br>Powered by "LuxeFurniture" Web Hosting
+    </p>
+  </footer>
+
+  <script>
+    function selectTier(tier) {
+      document.getElementById('tier').value = tier;
+      document.querySelector('.signup-form').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Placeholder for form submission (add real handling as needed)
+    document.getElementById('membershipForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for joining ' + document.getElementById('tier').value + ' Membership! We will contact you soon.');
+    });
+
+    // Trigger animations on load
+    window.addEventListener('load', function() {
+      document.querySelectorAll('.tier-card').forEach(card => {
+        card.style.opacity = 1;
+        card.style.transform = 'translateY(0)';
+      });
+    });
+  </script>
+</body>
+</html>

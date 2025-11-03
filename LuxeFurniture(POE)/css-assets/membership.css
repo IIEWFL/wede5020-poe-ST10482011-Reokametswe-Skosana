@@ -1,0 +1,312 @@
+
+    :root {
+      --primary: rgb(7, 71, 63); 
+      --accent: rgba(143, 126, 96, 0.579);
+      --header-bg: rgba(113, 126, 144, 0.275); 
+      --bg: #f0f0f0;
+      --text: #333;
+      --hover-link: aliceblue;
+      --price: #8f7e60;
+      --desc: #073f3f;
+      --tier-bg: rgba(255, 255, 255, 0.95);
+      --button: #9294a1;
+      --button-hover: #ababae;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 40px 20px;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary);
+    }
+
+    header {
+      background-color: var(--header-bg);
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    .logo {
+      width: 200px;
+      transition: transform 0.4s ease;
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    .logo:hover {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    nav {
+      margin: 20px 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--accent);
+      font-size: 20px;
+      padding: 0 50px;
+      position: relative;
+      transition: color 0.4s ease;
+      animation: fadeInUp 1.2s ease-out forwards;
+      opacity: 0;
+      animation-delay: calc(0.2s * var(--i));
+    }
+
+    nav a:hover {
+      color: var(--hover-link);
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary);
+      transition: width 0.4s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 40px;
+      position: relative;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    h1::after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 3px;
+      background-color: var(--primary);
+      margin: 20px auto;
+    }
+
+    .intro {
+      max-width: 800px;
+      margin: 0 auto 60px;
+      font-size: 1.1rem;
+      color: #555;
+      animation: fadeInUp 1.5s ease-out;
+    }
+
+    .tiers {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      margin-bottom: 80px;
+    }
+
+    .tier-card {
+      background: var(--tier-bg);
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      opacity: 0;
+      transform: translateY(50px);
+      animation: fadeInUp 1.8s ease-out forwards;
+      animation-delay: calc(0.3s * var(--i));
+    }
+
+    .tier-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    }
+
+    .tier-card h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .tier-card .price {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: var(--price);
+      margin: 20px 0;
+    }
+
+    .tier-card .desc {
+      font-size: 1rem;
+      color: var(--desc);
+      margin-bottom: 20px;
+    }
+
+    .tier-card ul {
+      text-align: left;
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .tier-card ul li {
+      margin: 12px 0;
+      position: relative;
+      padding-left: 30px;
+      font-size: 1rem;
+    }
+
+    .tier-card ul li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    .tier-card button {
+      background: var(--button);
+      color: white;
+      padding: 14px 30px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      transition: background 0.4s ease, transform 0.4s ease;
+      width: 100%;
+    }
+
+    .tier-card button:hover {
+      background: var(--button-hover);
+      transform: scale(1.05);
+    }
+
+    .signup-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: var(--tier-bg);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      animation: fadeInUp 2s ease-out;
+    }
+
+    .signup-form h2 {
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+    }
+
+    .signup-form label {
+      display: block;
+      text-align: left;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--primary);
+    }
+
+    .signup-form input,
+    .signup-form select {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font: inherit;
+      background: rgba(255, 255, 255, 0.8);
+      transition: border-color 0.4s ease;
+    }
+
+    .signup-form input:focus,
+    .signup-form select:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    .signup-form button {
+      background: var(--primary);
+      color: white;
+      padding: 14px 30px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      transition: background 0.4s ease, transform 0.4s ease;
+      animation: pulse 2s infinite;
+    }
+
+    .signup-form button:hover {
+      background: var(--button-hover);
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: var(--header-bg);
+      color: var(--text);
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9rem;
+      margin-top: 60px;
+      animation: fadeInUp 2s ease-out;
+    }
+
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(7, 71, 63, 0.4); }
+      70% { box-shadow: 0 0 0 10px rgba(7, 71, 63, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(7, 71, 63, 0); }
+    }
+
+    nav a:nth-child(1) { --i: 1; }
+    nav a:nth-child(2) { --i: 2; }
+    nav a:nth-child(3) { --i: 3; }
+    nav a:nth-child(4) { --i: 4; }
+
+    .tier-card:nth-child(1) { --i: 1; }
+    .tier-card:nth-child(2) { --i: 2; }
+    .tier-card:nth-child(3) { --i: 3; }
+
+   
+    @media (max-width: 768px) {
+      nav a {
+        display: block;
+        padding: 10px 0;
+        font-size: 18px;
+      }
+      h1 { font-size: 2.5rem; }
+      .tiers { grid-template-columns: 1fr; }
+      .signup-form { padding: 30px; }
+    }
