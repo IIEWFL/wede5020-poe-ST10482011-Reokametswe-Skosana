@@ -12,3 +12,8 @@ phase 3
 i made few changes to the wbsite making it responsive, added animation and made the pictures clickable(a lightbox)
 added css and javascript to make to the website look the same throught and have a constant look and design, similer with the colour scheme, added meta tags.
 
+references
+Google (2025) Google Fonts API: Playfair Display and Montserrat. Available at: https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap (Accessed: 3 November 2025).
+Google Maps (2025) Embedded map for Place Direct, Menlyn, Pretoria. Available at: https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d57358.13335119338!2d28.007807!3d-26.037373!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9572c6626cd257%3A0x1d6e6d56245e2c64!2sPlace%20Direct!5e0!3m2!1sen!2sus!4v1757590909740!5m2!1sen!2sus (Accessed: 3 November 2025).
+
+
